@@ -36,7 +36,7 @@ public class DeviceList extends AppCompatActivity
         setContentView(R.layout.activity_device_list);
 
         //Calling widgets
-        btnPaired = (Button)findViewById(R.id.button);
+
         devicelist = (ListView)findViewById(R.id.listView);
 
         //if the device has bluetooth
@@ -57,14 +57,15 @@ public class DeviceList extends AppCompatActivity
             startActivityForResult(turnBTon,1);
         }
 
-        btnPaired.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                pairedDevicesList();
-            }
-        });
 
+
+    }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        pairedDevicesList();
+        //Toast.makeText(getApplicationContext(),"Now onStart() calls", Toast.LENGTH_LONG).show(); //onStart Called
     }
 
     private void pairedDevicesList()

@@ -1,8 +1,5 @@
 package com.example.bluetoothproject;
 
-
-
-
 import android.os.Bundle;
 import android.bluetooth.BluetoothSocket;
 import android.content.Intent;
